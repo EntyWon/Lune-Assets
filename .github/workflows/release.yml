@@ -16,13 +16,13 @@ jobs:
 
       - name: Zip Folder
         run: |
-          zip -r -9 Assets.zip . \
-          -x "*.git*" \
-          ".github*" \
-          "README.md" \
-          "readme.md" \
-          "LICENSE*" \
-          ".gitignore"
+          7z a -tzip -mx=9 Assets.zip . \
+          -x!.git \
+          -x!.github \
+          -x!README.md \
+          -x!readme.md \
+          -x!LICENSE \
+          -x!.gitignore
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
